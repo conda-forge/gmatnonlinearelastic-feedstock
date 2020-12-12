@@ -19,8 +19,10 @@ requirements:
     - cmake
     - make  # [unix]
     - xtensor
+    - gmattensor
   run:
     - xtensor
+    - gmattensor
 
 test:
   commands:
