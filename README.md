@@ -1,5 +1,5 @@
-About gmatnonlinearelastic
-==========================
+About gmatnonlinearelastic-split
+================================
 
 Home: https://github.com/tdegeus/GMatNonLinearElastic
 
@@ -7,13 +7,13 @@ Package license: MIT
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/gmatnonlinearelastic-feedstock/blob/master/LICENSE.txt)
 
-Summary: Non-linear elastic material model (C++ header-only library).
+Summary: Non-linear elastic material model.
 
 Development: https://github.com/tdegeus/GMatNonLinearElastic
 
-Documentation: https://github.com/tdegeus/GMatNonLinearElastic
+Documentation: https://tdegeus.github.io/GMatNonLinearElastic
 
-Non-linear elastic material model (C++ header-only library).
+Non-linear elastic material model.
 
 Current build status
 ====================
@@ -74,21 +74,22 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-gmatnonlinearelastic-green.svg)](https://anaconda.org/conda-forge/gmatnonlinearelastic) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gmatnonlinearelastic.svg)](https://anaconda.org/conda-forge/gmatnonlinearelastic) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gmatnonlinearelastic.svg)](https://anaconda.org/conda-forge/gmatnonlinearelastic) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gmatnonlinearelastic.svg)](https://anaconda.org/conda-forge/gmatnonlinearelastic) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-python--gmatnonlinearelastic-green.svg)](https://anaconda.org/conda-forge/python-gmatnonlinearelastic) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/python-gmatnonlinearelastic.svg)](https://anaconda.org/conda-forge/python-gmatnonlinearelastic) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/python-gmatnonlinearelastic.svg)](https://anaconda.org/conda-forge/python-gmatnonlinearelastic) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/python-gmatnonlinearelastic.svg)](https://anaconda.org/conda-forge/python-gmatnonlinearelastic) |
 
-Installing gmatnonlinearelastic
-===============================
+Installing gmatnonlinearelastic-split
+=====================================
 
-Installing `gmatnonlinearelastic` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `gmatnonlinearelastic-split` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `gmatnonlinearelastic` can be installed with:
+Once the `conda-forge` channel has been enabled, `gmatnonlinearelastic, python-gmatnonlinearelastic` can be installed with:
 
 ```
-conda install gmatnonlinearelastic
+conda install gmatnonlinearelastic python-gmatnonlinearelastic
 ```
 
 It is possible to list all of the versions of `gmatnonlinearelastic` available on your platform with:
@@ -136,17 +137,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating gmatnonlinearelastic-feedstock
-=======================================
+Updating gmatnonlinearelastic-split-feedstock
+=============================================
 
-If you would like to improve the gmatnonlinearelastic recipe or build a new
+If you would like to improve the gmatnonlinearelastic-split recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/gmatnonlinearelastic-feedstock are
+Note that all branches in the conda-forge/gmatnonlinearelastic-split-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
