@@ -1,6 +1,6 @@
 {% set org = "tdegeus" %}
 {% set name = "GMatNonLinearElastic" %}
-{% set version = "0.3.0" %}
+{% set version = "0.3.1" %}
 
 package:
   name: {{ name|lower }}-split
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/{{ org }}/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 959e1add539952ff916e581efbb60208bf9c4a8d9f4a466a061b9c670e23ff91
+  sha256: 25b23de18a1edfe68d4f4323981eabaadb1f5f39ccf076348a856607c139a50b
 
 build:
   number: 0
