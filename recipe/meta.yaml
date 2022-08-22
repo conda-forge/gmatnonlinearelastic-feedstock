@@ -1,6 +1,6 @@
 {% set org = "tdegeus" %}
 {% set name = "GMatNonLinearElastic" %}
-{% set version = "0.2.1" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}-split
@@ -8,12 +8,10 @@ package:
 
 source:
   url: https://github.com/{{ org }}/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 25dda5cfa92b6895e1dd516d4c930f4afa79773b85b550e579d202c5035b6d54
+  sha256: 959e1add539952ff916e581efbb60208bf9c4a8d9f4a466a061b9c670e23ff91
 
 build:
-  number: 1
-  script_env: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
-  skip: True  # [python_impl == 'pypy']
+  number: 0
 
 outputs:
 
@@ -22,17 +20,22 @@ outputs:
     script: install.sh  # [unix]
     script: install.bat  # [win]
 
+    build:
+      script_env: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
+
     requirements:
       build:
         - {{ compiler('cxx') }}
         - cmake
         - make  # [unix]
       host:
-        - gmattensor
-        - xtensor
+        - gmatelastic >=0.5.1
+        - gmattensor >=0.10.1
+        - xtensor >=0.24.2
       run:
-        - gmattensor
-        - xtensor
+        - gmatelastic >=0.5.1
+        - gmattensor >=0.10.1
+        - xtensor >=0.24.2
 
     test:
       commands:
@@ -47,6 +50,10 @@ outputs:
     script: install_python.sh  # [unix]
     script: install_python.bat  # [win]
 
+    build:
+      script_env: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
+      skip: true  # [python_impl == 'pypy']
+
     requirements:
       build:
         - python                              # [build_platform != target_platform]
@@ -55,27 +62,32 @@ outputs:
         - setuptools_scm                      # [build_platform != target_platform]
         - {{ compiler('cxx') }}
         - cmake
+        - make  # [unix]
         - ninja
       host:
-        - gmattensor
+        - gmatelastic >=0.5.1
+        - gmattensor >=0.10.1
         - numpy *
         - pip
         - pybind11
+        - pybind11-abi
         - python
         - scikit-build
         - setuptools_scm
-        - xtensor
+        - xtensor >=0.24.2
         - xtensor-python
       run:
-        - python
         - numpy *
+        - python
+        - python-gmatelastic >=0.5.1
+        - python-gmattensor >0.9.0
 
     test:
       imports:
         - {{ name }}
       commands:
         - pip check
-        - python -c "import {{ name }}; {{ name }}.version()"
+        - python -c "import {{ name }}; assert {{ name }}.version() == '{{ version }}'"
       requires:
         - pip
 
