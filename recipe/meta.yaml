@@ -11,7 +11,7 @@ source:
   sha256: 1850bc4629d564740dd74ef7fa01fa2459721f20ec3221096b276318b699ac19
 
 build:
-  number: 2
+  number: 3
 
 outputs:
 
@@ -26,6 +26,7 @@ outputs:
     requirements:
       build:
         - {{ compiler('cxx') }}
+        - {{ stdlib("c") }}
         - cmake
         - make  # [unix]
       host:
@@ -61,6 +62,7 @@ outputs:
         - numpy *                             # [build_platform != target_platform]
         - setuptools_scm                      # [build_platform != target_platform]
         - {{ compiler('cxx') }}
+        - {{ stdlib("c") }}
         - cmake
         - make  # [unix]
         - ninja
